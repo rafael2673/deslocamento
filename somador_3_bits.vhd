@@ -19,9 +19,9 @@ architecture soma of somador_3_bits is
 	
 begin
 	
-	I0 <= (M xor B);
-	I1 <= M;
-	I2 <= M;
+	I0 <= (M xor B) and B;
+	I1 <= (M xor B) and M;
+	I2 <= (M xor B) and M;
 	
 	SOMA0 : full_adder port map(A(0), I0, M, S(0), C0);
 	SOMA1 : full_adder port map(A(1), I1, C0, S(1), C1);
